@@ -5,6 +5,34 @@ $(window).on("load",function(){
     }); 
 });
 
+function delay(n){
+    n = n || 2000;
+    return new Promise((done) => {
+        setTimeout(()=>{
+            done();
+        },n);
+    });
+}
+function pageTransition(){
+    var tl = gsap.timeline();
+    tl.to(".loading-screen",{
+        duration: 1.2,
+        width: "100%",
+        left: "0",
+        ease: "Expo.easeInOut"
+    });
+    tl.to(".loading-screen",{
+        duration: 1,
+        width: "100%",
+        left : "100%",
+        ease: "Expo.easeInOut",
+        delay: 0.3
+
+    });
+    return tl.set(".loading-screen",{left: "-100%"});
+  }
+
+
 const cursor = document.querySelector(".cursor-inner");
 const cursor2 = document.querySelector(".cursor-outer");
 
@@ -84,3 +112,55 @@ hamburgerMenuContainerTag.addEventListener("click", ()=> {
         })
     });
     
+    feather.replace();
+        
+        // const texts = [
+        //     'HTML','CSS','BOOTSTRAP','SCSS',
+        //     'JAVASCRIPT','JQUERY','AJAX',
+        //     'VUE','VUEX',
+        //     'PHP','MYSQL','LARAVEL','INERTIA',
+        //     'NPM'
+        // ];
+        // //const TagCloud = require('TagCloud');
+        // const container = '.tagcloud';
+        // var tagCloud = TagCloud(container,texts,{
+        //     radius: '300',
+
+        //     maxSpeed: 'normal',
+        //     initSpeed:'fast',
+
+        //     direction: 135,
+
+        //     keep: true,
+        // });
+        $(function(){
+            barba.init({
+               
+                sync: true,
+                transitions: [{
+        
+                  async leave(data) {
+                    const done = this.async();
+                    pageTransition();
+                    await delay(1000);
+                    done();
+                    // return data;
+        
+                  },
+                  async enter(data){
+                    // pageTransition();
+                  }
+                // leave(data) {
+                //     return gsap.to(data.current.container, {
+                //       opacity: 0
+                //     });
+                //   },
+                //   enter(data) {
+                //     return gsap.from(data.next.container, {
+                //       opacity: 0
+                //     });
+                //   }
+                  
+                }]
+              });
+        })
