@@ -10,11 +10,10 @@
     <title>Kyaw Ko Ko Oo</title>
 </head>
 
-<body data-barba="wrapper">
+<body>
 
-    <div class="">
         <!--  -->
-        <div class="cursor cursor-inner"></div>
+        <div class="cursor cursor-inner d-flex align-items-center justify-content-center"><p class="mb-0 cursor-text fw-bolder">Go</p></div>
         <div class="cursor cursor-outer"></div>
 
         <div class="load-container">
@@ -123,11 +122,11 @@
             </div>
         </section>
 
-        <section class="vh-100 home-section position-relative py-4" style="background: #0A192F !important;">
+        <section class="min-vh-100 home-section d-flex align-items-center position-relative py-4" style="background: #0A192F !important;">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="banner-text-box p-0 m-0 d-flex align-items-baseline">
+                        <div class="banner-text-box p-0 mb-5 d-flex align-items-baseline">
                             <h1 class="banner-text banner-text-1 mb-0" style="color: #FFD600">A</h1>
                             <h1 class="banner-text banner-text-2 mb-0">B</h1>
                             <h1 class="banner-text banner-text-2 mb-0">O</h1>
@@ -136,17 +135,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-12">
-                        <i class="text-white" width="50" height="50" data-feather="arrow-down-right"></i>
-                    </div>
-                </div> -->
                 <div class="row">
                     <div class="col-1">
-                        <i class="text-white mt-5" width="50" height="50" data-feather="arrow-down-right"></i>
+                        <i class="text-white" width="50" height="50" data-feather="arrow-down-right"></i>
                     </div>
                     <div class="col-5">
-                        <div class="mt-5 pt-5">
+                        <div class="">
                             <h3 class="text-white">I Develope Web Application <br> for help People</h3>
                             <p class="text-white-50 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
                                 earum porro odit eius perspiciatis amet saepe iusto vitae nam. Vero, aliquid doloribus!
@@ -165,7 +159,7 @@
             </div>
         </section>
 
-        <section class="vh-100 home-section position-relative py-4"  style="background: #0A192F !important;">
+        <section class="min-vh-100 home-section position-relative py-4"  style="background: #0A192F !important;">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -181,63 +175,131 @@
                     </div>
                 </div>
                 <div class="row py-5 mt-5">
-
-                    <div class="col-4">
-                        <div class="mb-3 position-relative ms-5">
-                            <img class="img-fluid rounded" src="/resources/image/e-commerce.png" srcset="" style="width: 100%;filter:brightness(.5)">
-                            <h3 style="  cursor: pointer;
-                            -webkit-text-stroke: 1px #fff;
-                            text-transform: uppercase;
-                            font-weight: bolder;
-                            color: transparent;
-                            transition: all .5s ease;
-                            position: absolute;
-                            left: -50px;
-                            top: -10%;
-                            right: 50%;
-                            text-shadow: 1px 10px 5px #000;
-
-                            ">My Martket</h3>
+                    <div class="col-12">
+                        <div class="filterBtnContainer text-white d-flex pb-3"   style="border-bottom: 1px solid #ffffff30;">
+                            <button data-name="all" class="filterBtn border-0 item btn active">All</button>
+                            <button data-name="bootstrap" class="filterBtn border-0 item btn ms-2">Bootstrap</button>
+                            <button data-name="javascript" class="filterBtn border-0 item btn ms-2">Javascript</button>
+                            <button data-name="php" class="filterBtn border-0 item btn ms-2">PHP</button>
+                            <button data-name="laravel" class="filterBtn border-0 item btn ms-2">Laravel</button>
+                            <button data-name="vue" class="filterBtn border-0 item btn ms-2">Vue</button>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="mb-3 position-relative ms-5" style="transform: scale(1.3)">
-                            <img class="img-fluid rounded" src="/resources/image/e-commerce.png" srcset="" style="width: 100%;filter:brightness(1)">
-                            <h3 style="  cursor: pointer;
-                            text-transform: uppercase;
-                            font-weight: bolder;
-                            color: #fff;
-                            transition: all .5s ease;
-                            position: absolute;
-                            left: -50px;
-                            top: -10%;
-                            right: 50%;
-                            text-shadow: 1px 10px 5px #000;
-                            ">Discussion Forum</h3>
+                </div>
+                <!-- <div class="row py-5">
+                    <div class="col-12 filterItem item" data-name="bootstrap">
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div class="card rounded shadow-lg bg-transparent" style="width:40%; box-shadow: 0 1rem 3rem rgba(0,0,0,.20)!important;border-radius: 15px !important; background: trasnsparent;">
+                                <div class="card-body">
+                                    <h5 class="text-uppercase text-white">My-Shop</h5>
+                                    <img src="/resources/image/Frame1.png" class="my-3 w-100 rounded" alt="" srcset="">
+                                    <p class="text-white-50">Lorem ipsum dolor sit, amet consectetur ademque quasi, ut et esse soluta nemo.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="">
+                                            <i class="p-1 text-dark bg-white rounded-circle" data-feather="github"></i>
+                                        </div>
+                                        <a href="" class="btn text-white">Show More <i class="" data-feather="chevrons-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="" style="width: 60%">
+                                <h3 class="text-white">E-Commerce Project</h3>
+                                <p class="text-white-50">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A vero dolorem eius voluptatum molestiae numquam esse asperiores nulla officiis quos laudantium, nemo soluta atque, omnis suscipit repellendus accusantium quasi praesentium.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="mb-3 position-relative ms-5">
-                            <img class="img-fluid rounded" src="/resources/image/e-commerce.png" srcset="" style="width: 100%;filter:brightness(.5)">
-                            <h3 style="  cursor: pointer;
-                            -webkit-text-stroke: 1px #fff;
-                            text-transform: uppercase;
-                            font-weight: bolder;
-                            color: transparent;
-                            transition: all .5s ease;
-                            position: absolute;
-                            left: -50px;
-                            top: -10%;
-                            right: 50%;
-                            text-shadow: 1px 10px 5px #000;
-                            ">Pizza Order System</h3>
+                    <div class="col-12 filterItem item" data-name="laravel">
+                        <div class="d-flex jusifify-content-between">
+
+                            <div class="card rounded shadow-lg bg-transparent" style="width:40%; box-shadow: 0 1rem 3rem rgba(0,0,0,.20)!important;border-radius: 15px !important; background: trasnsparent;">
+                                <div class="card-body">
+                                    <h5 class="text-uppercase text-white">My-Shop</h5>
+                                    <img src="/resources/image/Frame1.png" class="my-3 w-100 rounded" alt="" srcset="">
+                                    <p class="text-white-50">Lorem ipsum dolor sit, amet consectetur ademque quasi, ut et esse soluta nemo.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="">
+                                            <i class="p-1 text-dark bg-white rounded-circle" data-feather="github"></i>
+                                        </div>
+                                        <a href="" class="btn text-white">Show More <i class="" data-feather="chevrons-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="" style="width: 60%">
+                                <h3 class="text-white">E-Commerce Project</h3>
+                                <p class="text-white-50">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A vero dolorem eius voluptatum molestiae numquam esse asperiores nulla officiis quos laudantium, nemo soluta atque, omnis suscipit repellendus accusantium quasi praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 filterItem item" data-name="javascript">
+                        <div class="d-flex jusifify-content-between">
+
+                            <div class="card rounded shadow-lg bg-transparent" style="width:40%; box-shadow: 0 1rem 3rem rgba(0,0,0,.20)!important;border-radius: 15px !important; background: trasnsparent;">
+                                <div class="card-body">
+                                    <h5 class="text-uppercase text-white">My-Shop</h5>
+                                    <img src="/resources/image/Frame 1.png" class="my-3 w-100 rounded" alt="" srcset="">
+                                    <p class="text-white-50">Lorem ipsum dolor sit, amet consectetur ademque quasi, ut et esse soluta nemo.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="">
+                                            <i class="p-1 text-dark bg-white rounded-circle" data-feather="github"></i>
+                                        </div>
+                                        <a href="" class="btn text-white">Show More <i class="" data-feather="chevrons-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="" style="width: 60%">
+                                <h3 class="text-white">E-Commerce Project</h3>
+                                <p class="text-white-50">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A vero dolorem eius voluptatum molestiae numquam esse asperiores nulla officiis quos laudantium, nemo soluta atque, omnis suscipit repellendus accusantium quasi praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div> -->
+                <div class="row projectBox item" data-name="laravel">
+                    <div class=" d-flex  align-items-center py-2"  style="border-bottom: 1px solid #ffffff30;">
+                            <div class="" style="width: 50%;">
+                                <h2 class="projectTitle text-transparent" style="font-weight: bolder;">MY-SHOP ( E-Commerce )</h2>
+                                <p class="text-white-50">Bootstrap 5,JQuery , Javascript , Ajax, Laravel 9, MySQL</p>
+                                <div class="">
+                                    <i class="text-white" data-feather="github"></i>
+                                </div>
+                            </div>
+                            <div class="ms-5" style="width: 50%;">
+                                <img src="/resources/image/Frame1.png" class="projectImage" style="width:200px ; border-radius: 10px" alt="" srcset="">
+                            </div>
+                    </div>
+                </div>
+                <div class="row projectBox item" data-name="vue">
+                    <div class=" d-flex  align-items-center py-2"  style="border-bottom: 1px solid #ffffff30;">
+                        <div class="" style="width: 50%;">
+                            <h2 class="projectTitle text-transparent" style="font-weight: bolder;">Discussion Forum</h2>
+                            <p class="text-white-50">Bootstrap 5,JQuery , Javascript , Ajax, Laravel 9, MySQL</p>
+                            <div class="">
+                                <i class="text-white" data-feather="github"></i>
+                            </div>
+                        </div>
+                        <div class="ms-5" style="width: 50%;">
+                            <img src="/resources/image/e-commerce.png" class="projectImage" style="width:200px ; border-radius: 10px" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row projectBox item" data-name="bootstrap">
+                    <div class=" d-flex  align-items-center py-2"  style="border-bottom: 1px solid #ffffff30;">
+                        <div class="" style="width: 50%;">
+                            <h2 class="projectTitle text-transparent" style="font-weight: bolder;">Pizza Order System</h2>
+                            <p class="text-white-50">Bootstrap 5,JQuery , Javascript , Ajax, Laravel 9, MySQL</p>
+                            <div class="">
+                                <i class="text-white" data-feather="github"></i>
+                            </div>
+                        </div>
+                        <div class="ms-5" style="width: 50%;">
+                            <img src="/resources/image/Frame1.png" class="projectImage" style="width:200px ; border-radius: 10px" alt="" srcset="">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!--  -->
-    </div>
 
     <!-- -------------------------------PreLoader------------------------------------  -->
     <!-- <div class="d-flex justify-content-center align-items-center bg-primary vw-100 vh-100 position-fixed loader-container">
@@ -259,21 +321,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"
     integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tag-cloud@1.3.3/src/tagCloud.min.js"></script> -->
-<!-- <script src="node_modules/TagCloud/dist/TagCloud.min.js"></script> -->
-
-<!-- load barba (UMD version) -->
-<script src="https://unpkg.com/@barba/core"></script>
-
-<!-- load gsap animation library (minified version) -->
-<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
 <script src="resources/js/script.js"></script>
-<script>
-
-
-
-
-
-</script>
-
 </html>

@@ -5,34 +5,6 @@ $(window).on("load",function(){
     }); 
 });
 
-function delay(n){
-    n = n || 2000;
-    return new Promise((done) => {
-        setTimeout(()=>{
-            done();
-        },n);
-    });
-}
-function pageTransition(){
-    var tl = gsap.timeline();
-    tl.to(".loading-screen",{
-        duration: 1.2,
-        width: "100%",
-        left: "0",
-        ease: "Expo.easeInOut"
-    });
-    tl.to(".loading-screen",{
-        duration: 1,
-        width: "100%",
-        left : "100%",
-        ease: "Expo.easeInOut",
-        delay: 0.3
-
-    });
-    return tl.set(".loading-screen",{left: "-100%"});
-  }
-
-
 const cursor = document.querySelector(".cursor-inner");
 const cursor2 = document.querySelector(".cursor-outer");
 
@@ -114,53 +86,63 @@ hamburgerMenuContainerTag.addEventListener("click", ()=> {
     
     feather.replace();
         
-        // const texts = [
-        //     'HTML','CSS','BOOTSTRAP','SCSS',
-        //     'JAVASCRIPT','JQUERY','AJAX',
-        //     'VUE','VUEX',
-        //     'PHP','MYSQL','LARAVEL','INERTIA',
-        //     'NPM'
-        // ];
-        // //const TagCloud = require('TagCloud');
-        // const container = '.tagcloud';
-        // var tagCloud = TagCloud(container,texts,{
-        //     radius: '300',
-
-        //     maxSpeed: 'normal',
-        //     initSpeed:'fast',
-
-        //     direction: 135,
-
-        //     keep: true,
-        // });
-        $(function(){
-            barba.init({
-               
-                sync: true,
-                transitions: [{
+   const filteBtnContainer = document.querySelector('.filterBtnContainer');
+   const projectBoxs = document.querySelectorAll('.projectBox');
+   const filterBtns = document.querySelectorAll('.filterBtn');
+//    projectBoxs.forEach(projectBox => {
+//     projectBox.addEventListener("mouseover", () => {
+//         cursor2.classList.add("cursorHoverProject");
+//         // const src = projectBox.chi
+//     })
+//     projectBox.addEventListener("mouseleave", () => {
+//         cursor2.classList.remove("cursorHoverProject");
+//     })
+// });
+const cursorText = document.querySelector('.cursor-text');
+const projectTitles = document.querySelectorAll('.projectTitle');
+filterBtns.forEach(filterBtn => {
+    filterBtn.addEventListener("mouseover", () => {
         
-                  async leave(data) {
-                    const done = this.async();
-                    pageTransition();
-                    await delay(1000);
-                    done();
-                    // return data;
-        
-                  },
-                  async enter(data){
-                    // pageTransition();
-                  }
-                // leave(data) {
-                //     return gsap.to(data.current.container, {
-                //       opacity: 0
-                //     });
-                //   },
-                //   enter(data) {
-                //     return gsap.from(data.next.container, {
-                //       opacity: 0
-                //     });
-                //   }
-                  
-                }]
-              });
-        })
+        cursor2.classList.add("cursorHoverNav");
+        // const src = filterBtn.chi
+    })
+    filterBtn.addEventListener("mouseleave", () => {
+
+        cursor2.classList.remove("cursorHoverNav");
+    })
+});
+
+projectBoxs.forEach(projectBox => {
+    projectBox.addEventListener("mouseover", () => {
+        cursor.classList.add('innerCursorHoverGoLink');
+        cursorText.classList.add('cursor-text-show');
+        cursor2.classList.add("cursorHoverGoLink");
+        // const src = projectBox.chi
+    })
+    projectBox.addEventListener("mouseleave", () => {
+        cursorText.classList.remove('cursor-text-show');
+
+        cursor2.classList.remove("cursorHoverGoLink");
+    })
+});
+
+
+   window.onload = () => {
+    filteBtnContainer.onclick = (selectedItem) => {
+        if(selectedItem.target.classList.contains('item')){
+            filteBtnContainer.querySelector('.active').classList.remove('active');
+            selectedItem.target.classList.add('active');
+            let filterType = selectedItem.target.getAttribute('data-name');
+            projectBoxs.forEach((projectBox)  => {
+                let filterBoxs = projectBox.getAttribute('data-name');
+                if((filterBoxs == filterType) || filterType == 'all'){
+                    projectBox.classList.remove('hide');
+                    projectBox.classList.add('show');
+                }else{
+                    projectBox.classList.add('hide');
+                    projectBox.classList.remove('show');
+                }
+            })
+        }
+    }
+   }

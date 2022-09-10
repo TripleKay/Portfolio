@@ -322,19 +322,93 @@ li a:hover {
   transform: translateY(-30px);
 }
 
-
-.tagcloud {
-  color: #fff;
-  display: inline-block;
-  /* width: 500px; */
-  /* top: 100px; */
-  /* left: 32%; */
-  font-weight: bold;
-  letter-spacing: 1px;
-  font-size: 20px;
+.filterBtn{
+  color: #ffffff90;
 }
-.tagcloud--item:hover{
-  color: #2C5364;
+.filterBtn.active{
+  background: #fff;
+  color: #000;
+}
+.projectBox {
+  transition: all .3s ease;
+}
+.projectImage{
+  visibility: hidden;
+  transform: scale(1);
+  transition: all .5s ease-in-out;
+
+}
+.projectBox:hover .projectImage{
+  visibility: visible;
+  transform: scale(2);
+  transition: all .5s ease-in-out;
+}
+.projectBox.hide {
+  display: none;
+}
+.projectBox.show {
+  animation: animateProjectBox 0.4s ease;
+}
+
+@keyframes animateProjectBox {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.projectTitle{
+  /* font-weight: bold !important; */
+  letter-spacing: 3px;
+  word-spacing: 10px;
+  /* color: #fff; */
+  cursor: none !important;
+  /* -webkit-text-stroke: 1px transparent; */
+  background: linear-gradient(to right, #fff 50%, #000 50%, #000);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s ease-out;
+  transition: all .3s ease;
+}
+.projectTitle:hover{
+  -webkit-text-stroke: 1px #fff;
+  background-position: -100%;
+  transition: all .3s ease;
+
+}
+.cursorHoverProject{
+  width: 400px;
+  height: 260px;
+  border-color: transparent;
+  border-radius: 20px;
+  /* background: #fff; */
+  background: url('../image/Frame1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  mix-blend-mode: difference;
+  /* mix-blend-mode:difference; */
+}
+.cursorHoverGoLink{
+  width: 100px;
+  height: 100px;
+  border-color: transparent;
+  border-radius: 50%;
+  background: #ffffff99;
+  /* mix-blend-mode:darken; */
+}
+.innerCursorHoverGoLink{
+  background: transparent;
+}
+.cursor-inner .cursor-text{
+  color: #fff;
+  display: none;
+  z-index: 2000 !important;
+}
+.cursor-text-show{
+  display: block !important;
 }
 /* <!-- -------------------------------responsive-------------------------------------  --> */
 
