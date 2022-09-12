@@ -224,9 +224,9 @@ background: linear-gradient(to top, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ 
 
 }
 .hamburgerMenuContainer {
-  /* position: fixed; */
-  /* right: 0px; */
-  /* top: 30px;  */
+  position: fixed;
+  right: 30px;
+  top: 10px; 
   cursor: pointer;
   z-index: 99;
 }
@@ -323,28 +323,77 @@ li a:hover {
 }
 
 .filterBtn{
-  color: #ffffff90;
+  color: #ffffff50;
+  border: 1px solid transparent;
+}
+.filterBtn .filterArrow{
+  display: none;
 }
 .filterBtn.active{
-  background: #fff;
-  color: #000;
+  color: #fff;
+  transition: .3s linear;
+
+}
+.filterBtn.active .filterArrow{
+  display: initial;
 }
 .projectBox {
+  height: 300px;
   transition: all .3s ease;
 }
+.projectGithub,
+.projectGithub .githubIcon{
+  cursor: none !important;
+}
+.projectGithub:hover{
+  background: #fff !important;
+  color: #000 !important;
+  transform: scale(1.5);
+  transition: .3s linear !important;
+}
+/* .projectBox:hover{
+  transform: scale(1.3);
+} */
 .projectImage{
-  visibility: hidden;
-  transform: scale(1);
+  /* visibility: hidden; */
+  /* transform: scale(1); */
+  /* backdrop-filter: blur(3px); */
+  filter: blur(3px);
+  filter: brightness(.4);
+  height: 260px !important;
   transition: all .5s ease-in-out;
 
 }
+.projectImage:hover{
+  filter: blur(1px);
+  filter: brightness(1);
+}
 .projectBox:hover .projectImage{
-  visibility: visible;
-  transform: scale(2);
+  /* visibility: visible; */
+  /* transform: scale(2); */
+  top:0% !important;
   transition: all .5s ease-in-out;
 }
+.projectViewDetail{
+  height: 40px;
+}
+/* .projectGithub{
+  
+} */
+.projectBox:hover .projectGithub{
+  /* visibility: visible; */
+  /* transform: scale(2); */
+  left:15px !important;
+  transition: all 1s ease-in-out;
+}
+.projectBox:hover .projectViewDetail{
+  /* visibility: visible; */
+  /* transform: scale(2); */
+  left:0% !important;
+  transition: all 1s ease-in-out;
+}
 .projectBox.hide {
-  display: none;
+  display: none !important;
 }
 .projectBox.show {
   animation: animateProjectBox 0.4s ease;
@@ -370,12 +419,11 @@ li a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: 0.5s ease-out;
-  transition: all .3s ease;
 }
 .projectTitle:hover{
   -webkit-text-stroke: 1px #fff;
   background-position: -100%;
-  transition: all .3s ease;
+  transition: all .5s ease;
 
 }
 .cursorHoverProject{

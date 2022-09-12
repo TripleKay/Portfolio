@@ -88,23 +88,13 @@ hamburgerMenuContainerTag.addEventListener("click", ()=> {
         
    const filteBtnContainer = document.querySelector('.filterBtnContainer');
    const projectBoxs = document.querySelectorAll('.projectBox');
+   const projectImages = document.querySelectorAll('.projectImage');
    const filterBtns = document.querySelectorAll('.filterBtn');
-//    projectBoxs.forEach(projectBox => {
-//     projectBox.addEventListener("mouseover", () => {
-//         cursor2.classList.add("cursorHoverProject");
-//         // const src = projectBox.chi
-//     })
-//     projectBox.addEventListener("mouseleave", () => {
-//         cursor2.classList.remove("cursorHoverProject");
-//     })
-// });
 const cursorText = document.querySelector('.cursor-text');
 const projectTitles = document.querySelectorAll('.projectTitle');
 filterBtns.forEach(filterBtn => {
     filterBtn.addEventListener("mouseover", () => {
-        
         cursor2.classList.add("cursorHoverNav");
-        // const src = filterBtn.chi
     })
     filterBtn.addEventListener("mouseleave", () => {
 
@@ -112,20 +102,27 @@ filterBtns.forEach(filterBtn => {
     })
 });
 
-projectBoxs.forEach(projectBox => {
-    projectBox.addEventListener("mouseover", () => {
+projectImages.forEach(projectImage => {
+    projectImage.addEventListener("mouseover", () => {
         cursor.classList.add('innerCursorHoverGoLink');
         cursorText.classList.add('cursor-text-show');
         cursor2.classList.add("cursorHoverGoLink");
-        // const src = projectBox.chi
     })
-    projectBox.addEventListener("mouseleave", () => {
+    projectImage.addEventListener("mouseleave", () => {
         cursorText.classList.remove('cursor-text-show');
 
         cursor2.classList.remove("cursorHoverGoLink");
     })
 });
-
+const projectGithubs = document.querySelectorAll('.projectGithub');
+projectGithubs.forEach(projectGithub => {
+    projectGithub.addEventListener("mouseover", () => {
+        cursor2.classList.add("cursorHoverNav");
+    })
+    projectGithub.addEventListener("mouseleave", () => {
+        cursor2.classList.remove("cursorHoverNav");
+    })
+});
 
    window.onload = () => {
     filteBtnContainer.onclick = (selectedItem) => {
